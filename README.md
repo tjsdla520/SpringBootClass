@@ -1,5 +1,5 @@
 # SpringBootClass
- 스프링부트강의1
+ 스프링부트강의1    
 7/17
 
 1.https://start.spring.io/ 활용   
