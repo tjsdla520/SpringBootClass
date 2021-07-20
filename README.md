@@ -46,7 +46,8 @@
         byte 처리 등등 기타 여러 HttpMessageConverter가 기본으로 등록되어 있음   
         
         
-       <hr/>   
+
+<hr/>
  7/20
 
 1. 웹 애플리케이션 계층 구조
