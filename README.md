@@ -1,5 +1,5 @@
 # SpringBootClass
- 스프링부트강의1    
+ 스프링부트강의 들으며     
 7/17
 
 1.https://start.spring.io/ 활용   
@@ -74,3 +74,27 @@
  - 테스트할때는 //given //when //then 으로 나누어 테스트하는것을 추천
  - DI = dependency injection 개념 약간
  - @BeforeEach : 각테스트 실행 전에 호출된다. 테스트가 서로 영향이 없도록 항상 새로운 객체를 생성하고 의존관계도 새로 맺어준다.
+
+
+<hr/>
+7/24
+1. 스프링빈을 등록하는 방법
+- 컴포넌트 스캔과 자동 의존관계 설정
+- 자바 코드로 직접 스프링 빈 등록하기
+
+2. 컴포넌트 스캔과 자동 의존관계 설정 
+ - @Controller = 스프링시작과동시에 해당클래스에서 객체생성 = 스프링 컨테이너에서 스프링 빈이 관리된다.
+ - @Autowired = controller와 service를 연결시켜줄때 사용
+ - @Service
+ - @Component 어노테이션이 있으면 스프링빈이 자동 등록된다.
+ - @Controller, @Autowired, @Service 모두 @Component를 포함한다.
+
+3. 자바코드로 직접 스프링 빈 등록하기
+ - 회원 서비스와 회원 리포지토리의 @Service, @Repository, @Autowired 애노테이션을 제거하고 
+    config 파일을 생성하여 처리
+   
+4. 회원관리  - 웹 MVC개발
+ - 회원 웹 기능 : 홈화면 추가
+ - 회원 웹 기능 : 등록
+ - 회원 웹 기능 : 조회
+
