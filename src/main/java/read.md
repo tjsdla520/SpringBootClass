@@ -89,3 +89,12 @@
  - 회원 웹 기능 : 홈화면 추가
  - 회원 웹 기능 : 등록
  - 회원 웹 기능 : 조회
+
+5. H2 데이터베이스 설치
+
+7/26
+1. 애플리케이션에서의 H2 db와 연결(요즘은 boot에서 모두해준다. 이전방식 해보기)
+ - build.gradle 에 implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+   runtimeOnly 'com.h2database:h2' 라이브러리 추가
+ - application.properties에 spring.datasource.url= jdbc:h2:tcp://localhost/~/test
+   spring.datasource.driver-class-name=org.h2.Driver 추가
