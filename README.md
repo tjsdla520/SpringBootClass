@@ -1,5 +1,5 @@
 ### SpringBootClass
-## 인프런 - 스프링 입문강의     
+## 인프런 - 스프링부트 입문강의     
 7/17
 
 1.https://start.spring.io/ 활용   
