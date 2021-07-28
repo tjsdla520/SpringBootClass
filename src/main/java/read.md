@@ -98,3 +98,20 @@
    runtimeOnly 'com.h2database:h2' 라이브러리 추가
  - application.properties에 spring.datasource.url= jdbc:h2:tcp://localhost/~/test
    spring.datasource.driver-class-name=org.h2.Driver 추가
+   
+7/28
+1. Spring을 쓰는이유 : 객체지향적이 설계는 다형성을 활용하여 인터페이스를 두고 여러개의 구현체를 구현할수있다.
+                        여기서 스프링은 스프링 컨테이너에서 자동으로 지원을 해줄뿐만 아니라 DI가 기존의 코드는 수정하지않고 설정해준다.
+
+2.개방-폐쇄 원칙(OCP, Open-Closed Principle)
+ - 확장에는 열려있고, 수정, 변경에는 닫혀있다
+
+3. 스프링 컨테이너와 DB까지 연결한 통합 테스트
+ - @SpringBootTest : 스프링 컨테이너와 테스트를 함께 실행한다.
+ - @Transactional : 테스트 케이스에 이 애노테이션이 있으면, 테스트 시작 전에 트랜잭션을 시작하고,
+   테스트 완료 후에 항상 롤백한다. 이렇게 하면 DB에 데이터가 남지 않으므로 다음 테스트에 영향을 주지
+   않는다
+   
+4. 스프링 JdbcTemplate
+ - 스프링 JdbcTemplate과 MyBatis 같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분
+   제거해준다. 하지만 SQL은 직접 작생해야 한다

@@ -5,9 +5,9 @@ import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;import java.util.List;
 import java.util.Optional;
-public class jdbcMemberRepository implements MemberRepository {
+public class JdbcMemberRepository implements MemberRepository {
     private final DataSource dataSource;
-    public jdbcMemberRepository(DataSource dataSource) {
+    public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;
     }
     @Override
@@ -15,12 +15,16 @@ public class jdbcMemberRepository implements MemberRepository {
         String sql = "insert into member(name) values(?)";
         Connection conn = null;
         PreparedStatement pstmt = null;
+        //결과를 받는것
         ResultSet rs = null;
         try {
+            //커넥션 가져오기
             conn = getConnection();
+            //sql삽입
             pstmt = conn.prepareStatement(sql,
                     Statement.RETURN_GENERATED_KEYS);
             pstmt.setString(1, member.getName());
+
             pstmt.executeUpdate();
             rs = pstmt.getGeneratedKeys();
             if (rs.next()) {
@@ -61,7 +65,8 @@ public class jdbcMemberRepository implements MemberRepository {
     }
     @Override
     public List<Member> findAll() {
-        String sql = "select * from member"; Connection conn = null;
+        String sql = "select * from member";
+        Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
