@@ -128,3 +128,29 @@
 4. 스프링 JdbcTemplate   
  - 스프링 JdbcTemplate과 MyBatis 같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분
    제거해준다. 하지만 SQL은 직접 작생해야 한다
+   
+   
+   <hr/>   
+   
+   7/29   
+1. JPA   
+ - JPA는 기존의 반복 코드는 물론이고, 기본적인 SQL도 JPA가 직접 만들어서 실행해준다.
+ - JPA를 사용하면, SQL과 데이터 중심의 설계에서 객체 중심의 설계로 패러다임을 전환을 할 수 있다.
+ - JPA를 사용하면 개발 생산성을 크게 높일 수 있다.
+ - build.gradle에 라이브러리 추가 / application.properties에 설정 추가
+ - @Entity jpa가 관리하는 entity / pk를 맵핑 / EntityManager를 DI를 통해 주입받아야한다.
+ - org.springframework.transaction.annotation.Transactional 를 사용하자.
+ - 스프링은 해당 클래스의 메서드를 실행할 때 트랜잭션을 시작하고, 메서드가 정상 종료되면 트랜잭션을
+   커밋한다. 만약 런타임 예외가 발생하면 롤백한다.
+ - JPA를 통한 모든 데이터 변경은 트랜잭션 안에서 실행해야 한다    
+
+2. 스프링 데이터 JPA   
+ - 기존 JPA에 스프링부트와 JPA만 사용해도 코드가 줄어드나 인터페이스만으로 개발을 완료 할수 있음
+ - 반복적으로 구현하던 CRUD도 구현가능 중복을 줄임
+ - 인터페이스에 JpaRepository를 extends 하면 구현체를 자동으로 생성해준다.
+
+3. 스프링 데이터 JPA 제공기능   
+ - 인터페이스를 통한 기본적인 CRUD
+ - findByName() , findByEmail() 처럼 메서드 이름 만으로 조회 기능 제공
+ - 페이징 기능 자동 제공
+
